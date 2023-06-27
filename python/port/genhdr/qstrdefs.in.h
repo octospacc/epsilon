@@ -438,3 +438,7 @@ Q(colormode)
 Q(time)
 Q(sleep)
 Q(monotonic)
+
+Q(uart)
+Q(readLine)
+Q(writeLine)

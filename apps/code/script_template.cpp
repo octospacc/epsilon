@@ -104,4 +104,16 @@ const ScriptTemplate * ScriptTemplate::Parabola() {
   return &parabolaScriptTemplate;
 }
 
+constexpr ScriptTemplate uartChatScriptTemplate("uart_chat.py", R"(import uart
+def chat():
+  while True:
+    line = input("==> ")
+    uart.writeLine(line)
+    line = uart.readLine()
+    print("<== " + line))");
+
+const ScriptTemplate * ScriptTemplate::UartChat() {
+  return &uartChatScriptTemplate;
+}
+
 }

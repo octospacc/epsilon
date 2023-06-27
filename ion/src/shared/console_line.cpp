@@ -12,7 +12,7 @@ void writeLine(const char * line, bool appendCRLF) {
     writeChar(*line++);
   }
   if (appendCRLF) {
-    writeChar('\r');
+    //writeChar('\r');
     writeChar('\n');
   }
   while (!transmissionDone()) {
@@ -27,7 +27,8 @@ void readLine(char * line, int maxLineLength) {
   char * last = line+maxLineLength-1;
   while (true) {
     *cursor = readChar();
-    if (*cursor == '\r' || cursor == last) {
+    //if (*cursor == '\r' || cursor == last) {
+    if (*cursor == '\n' || cursor == last) {
       *cursor = 0;
       return;
     }

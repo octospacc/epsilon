@@ -8,6 +8,7 @@ void writeChar(char c);
 // Return true if the screen could be cleared
 bool clear();
 char readChar();
+bool readCharNonblocking(char * dest);
 
 // The lines are NULL-terminated
 void writeLine(const char * line, bool appendCRLF = true);
